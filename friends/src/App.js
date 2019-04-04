@@ -1,18 +1,24 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 
+import FriendsList from './components/FriendsList';
+
 
 class App extends Component {
+
+  // Inside your React application, create a component to display the list of friends coming from the server.
+
+  state = {
+    friends: []
+  }
 
   componentDidMount() {
     // http://localhost:3333 is address to the server doorstep
     // items is the endpoint
     axios.get('http://localhost:5000/friends')
-    .then(res => console.log(res))
+    .then(res => this.setState({ friends: res.data }))
     .catch(err => console.log(err))
-    console.log('Im inside')
   
   }
 
@@ -20,10 +26,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
+           {this.state.friends.map(friend => <FriendsList friend={friend}/>)}
           <a
             className="App-link"
             href="https://reactjs.org"
