@@ -10,13 +10,14 @@ const FriendsList = props => {
     return (
         <div className="friend-list-wrapper">
         {props.friends.map(friend => (
-        console.log(friend),
+        
             <div 
             onClick={e => routeToItem(e, friend)}
             className="friend-card"
             key={friend.id}
             > 
-            <p>{friend.name}</p>           
+            <p>{friend.name}</p> 
+            <img className="friend-list-image" src={friend.imageUrl} alt="profile pic"/>          
             </div>
         ))}
         </div>

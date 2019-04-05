@@ -8,7 +8,7 @@ const Home = props => {
 
     return (
         <div className="home-wrapper">
-            <img src="https://www.uncommongoods.com/images/category/fun-fullwidth.jpg" alt="Home Page" />
+            <img className="home-image" src="https://i.ytimg.com/vi/gFKE0XA6RKU/maxresdefault.jpg" alt="Home Page" />
         <button onClick={routeToFriends} className="md-button friend-button">Find Friends!</button>
         </div>
     )

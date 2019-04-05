@@ -8,7 +8,8 @@ class FriendForm extends React.Component {
             friend: {
                 name: "",
                 email: "",
-                age: ""
+                age: "",
+                imageUrl: ""
             }
         }
     }
@@ -17,19 +18,27 @@ class FriendForm extends React.Component {
         e.persist();
         let value = e.target.value;
         this.setState(prevState => ({
-            friend: { ...prevState.friend, [e.target.name]: value }
+            friend: {
+                ...prevState.friend,
+                [e.target.name]: value
+            }
         }));
     };
 
     handleSubmit = e => {
         e.preventDefault();
         axios
-        .post('http://localhost:5000/friends', this.state.friend)
-        .then(res => {
-            this.props.updateFriend(res.data);
-            this.props.history.push('/friends');
-        })
-        .catch(err => console.log(err));
+            .post('http://localhost:5000/friends', this.state.friend)
+            .then(res => {
+                this
+                    .props
+                    .updateFriend(res.data);
+                this
+                    .props
+                    .history
+                    .push('/friends');
+            })
+            .catch(err => console.log(err));
     }
 
     render() {
@@ -51,7 +60,7 @@ class FriendForm extends React.Component {
                         type="text"
                         name="email"
                         onChange={this.handleChange}
-                        placeholder="example@email.com"
+                        placeholder="example@email.com..."
                         value={this.state.friend.email}/>
 
                     <div className="baseline"/>
@@ -60,8 +69,15 @@ class FriendForm extends React.Component {
                         type="number"
                         name="age"
                         onChange={this.handleChange}
-                        placeholder="age"
+                        placeholder="age..."
                         value={this.state.friend.age}/>
+
+                    <input
+                        type="string"
+                        name="imageUrl"
+                        onChange={this.handleChange}
+                        placeholder="Image URL here..."
+                        value={this.state.friend.imageUrl}/>
 
                     <div className="baseline"/>
 

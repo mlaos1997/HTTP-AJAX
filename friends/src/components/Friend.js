@@ -8,7 +8,10 @@ const Friend = props => {
     const friend = props
         .friends
         .find(friend => `${friend.id}` === props.match.params.id);
-        console.log(friend);
+
+    const routeToFriendsPage = props => {
+        props.history.push('/friends');
+    }
 
     if (!props.friends.length || !friend) {
         return <h2>Loading friend...</h2>
@@ -16,18 +19,21 @@ const Friend = props => {
 
     return (
         <div className="friend-wrapper">
-            <div onClick={props.deleteFriend(friend.id)} className="friend-header">
+            <div className="friend-header">
                 <div className="friend-title-wrapper">
                     <h2>{friend.name}</h2>
-                    <h4>{friend.age}</h4>
+                    <img className="friend-list-image" src={friend.imageUrl} alt="yeah"/>
+                    <div className="button-wrapper">
+                    <button onClick={props.deleteFriend(friend.id)}>Delete</button>
+                    </div>
                 </div>
             </div>
             <nav className="friend-sub-nav">
                 <NavLink exact to={`/friends/${friend.id}`}>
-                    Bio
+                    Age
                 </NavLink>
                 <NavLink to={`/friends/${friend.id}/meetup`}>
-                    Meetup
+                    Email
                 </NavLink>
             </nav>
             <Route

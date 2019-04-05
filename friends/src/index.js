@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import ReactDOM from "react-dom";
-import './App.css';
+import './index.css';
 import axios from 'axios';
 import {BrowserRouter as Router, Route, NavLink} from 'react-router-dom';
 
@@ -33,6 +33,9 @@ class App extends Component {
         }
     }
 
+ 
+    
+
     componentDidMount() {
         // http://localhost:3333 is address to the server doorstep items is the endpoint
         axios
@@ -51,7 +54,8 @@ class App extends Component {
                         <NavLink exact to="/">
                             Home
                         </NavLink>
-                        <NavLink to="/friends">Friends</NavLink>
+                        <NavLink exact to="/friends">Friends</NavLink>
+                        <NavLink to="/friend-form">Friend Form</NavLink>
                     </div>
                 </nav>
 
