@@ -15,36 +15,42 @@ let friends = [
     name: 'Ben',
     age: 30,
     email: 'ben@lambdaschool.com',
+    imageUrl: 'https://i.ytimg.com/vi/pDp_3gt1IgU/maxresdefault.jpg'
   },
   {
     id: 2,
     name: 'Austen',
     age: 32,
     email: 'austen@lambdaschool.com',
+    imageUrl: 'https://www.philly.com/resizer/wM2inKEtsgVI17xxB5dEeWhyRBk=/1400x932/smart/arc-anglerfish-arc2-prod-pmn.s3.amazonaws.com/public/HKRMVCTQAVFAFMOVNYNHKKXTMM.jpg'
   },
   {
     id: 3,
     name: 'Ryan',
     age: 35,
     email: 'ryan@lambdaschool.com',
+    imageUrl: 'https://pmcvariety.files.wordpress.com/2013/06/deadpool-trailer-2.jpg?w=1000'
   },
   {
     id: 4,
     name: 'Sean',
     age: 35,
     email: 'sean@lambdaschool.com',
+    imageUrl: 'https://studybreaks.com/wp-content/uploads/2018/12/sb1.jpg'
   },
   {
     id: 5,
     name: 'Michelle',
     age: 67,
     email: 'michelle@gmail.com',
+    imageUrl: 'https://www.wikihow.com/images/e/e8/Draw-Sandy-Cheeks-from-SpongeBob-SquarePants-Step-9.jpg'
   },
   {
     id: 6,
     name: 'Luis',
     age: 47,
     email: 'luis@lambdaschool.com',
+    imageUrl: 'https://s1.dmcdn.net/tRwei/x1080-0Fd.jpg'
   },
 ];
 
